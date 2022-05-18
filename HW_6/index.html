@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>onclick</title>
-</head>
-<body>
-    
-</body>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>onClick</title>
+  <script>
+   function isSimple() {
+    let num;
+    let flag = true;
+        for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+                flag = false;
+                break
+            }
+        }
+    }
+    console.log(isSimple);
+ 
+    </script>
+ </head> 
+ <body>
+  <form action="">
+   <p>Enter number and click the button &laquo;Check&raquo;</p>
+   <p><input type="text" id="email"> <span id="status"></span></p>
+   <p><input type="button" value="Check" onclick="isSimple()"></p>
+  </form>
+ </body>
 </html>
