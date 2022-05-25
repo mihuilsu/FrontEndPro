@@ -1,28 +1,51 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>onClick</title>
-  <script>
-   function isSimple() {
-    let num;
-    let flag = true;
-        for (let i = 2; i < num; i++) {
-            if (num % i == 0) {
-                flag = false;
-                break
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HW_6</title>
+        <link rel="shortcut icon" href="js.ico" type="image/x-icon">
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Number checking</h1>
+            <p>Check your number on parity or simplicity </p>
+            <input type="text" class="input-in">
+            <input type="button" value="Check" onclick ="PrimeClick()">              
+        </div>
+    </body>    
+        <script>
+        const PrimeClick = () => {           
+            let inputIn = document.querySelector('.input-in');
+            let num = +inputIn.value;   
+                if (isNaN(num)){
+                    alert("This is not a number");
+                    return;
+                };
+        
+                if (num==null || num==''){
+                    alert('Please, enter your number');
+                    return;
+                }
+
+            isPrime(num) ? alert(`Number ${num} is prime`) : alert(`Number ${num} is composite`);
+            isEven (num) ? alert(`Number ${num} is odd`) : alert(`Number ${num} is even`)
+
+        };
+        
+        const isPrime = (num) => {
+            let flag = true;
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    flag = false;
+                    break;
+                }                                              
             }
-        }
-    }
-    console.log(isSimple);
- 
-    </script>
- </head> 
- <body>
-  <form action="">
-   <p>Enter number and click the button &laquo;Check&raquo;</p>
-   <p><input type="text" id="email"> <span id="status"></span></p>
-   <p><input type="button" value="Check" onclick="isSimple()"></p>
-  </form>
- </body>
+            return flag;
+        };
+
+        const isEven = (num) => {
+            return (num % 2)
+        };
+        </script>
 </html>
