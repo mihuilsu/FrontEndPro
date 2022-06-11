@@ -231,4 +231,13 @@ const users = [
     }
   ];
 
-  
+const findUserBySearchObject = (userParamsObject) => {
+  const key = Object.keys(userParamsObject)[0];
+
+  return users.find((user) => {
+    return user[key] === userParamsObject[key];
+  });
+}
+
+console.log(findUserBySearchObject({id: 9}));
+console.log(findUserBySearchObject({username: "Kamren"}));
